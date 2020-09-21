@@ -27,24 +27,26 @@ export class DigitalClockComponent implements OnInit, AfterViewInit {
   updateDate(date){
   	const hours = date.getHours();
   	this.ampm = hours >= 12 ? 'PM' : 'AM';
+  	this.hours = this.getHours(hours);
 
-  	//TODO: move to get hours func()
-  	this.hours = this.getHours(hours);/*
-  	this.hours = this.hours ? this.hours : 12;
-  	this.hours = this.hours < 10 ? '0' + this.hours : this.hours;*/
-
-  	//TODO: move to getMinutes func()
   	const minutes = date.getMinutes();
-  	this.minutes = minutes < 10 ? '0' + minutes : minutes.toString();
+  	this.minutes = this.getMinutes(minutes);
 
-  	//TODO: get seconds func()
   	const seconds = date.getSeconds();
-  	this.seconds = seconds < 10 ? '0' + seconds : seconds.toString();
+  	this.seconds = this.getSeconds(seconds);
   }
 
   getHours(hours){
     var updated_hours = hours % 12;
     updated_hours = updated_hours ? updated_hours : 12;
     return updated_hours < 10 ? '0' + updated_hours : updated_hours.toString();
+  }
+
+  getMinutes(minutes){
+    return minutes < 10 ? '0' + minutes : minutes.toString();
+  }
+
+  getSeconds(seconds){
+    return seconds < 10 ? '0' + seconds : seconds.toString();
   }
 }

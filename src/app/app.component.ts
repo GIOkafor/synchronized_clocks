@@ -7,7 +7,7 @@ import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'synchronized-clocks';
+  title = 'Synchronized Clocks';
   time = new Date();
   time_form = this.fb.group({
   	'new_time': ["", Validators.required]

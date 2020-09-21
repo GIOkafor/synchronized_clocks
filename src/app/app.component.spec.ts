@@ -1,9 +1,13 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        ReactiveFormsModule
+      ],
       declarations: [
         AppComponent
       ],
@@ -16,16 +20,9 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'synchronized-clocks'`, () => {
+  it(`should have as title 'Synchronized Clocks'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('synchronized-clocks');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('synchronized-clocks app is running!');
+    expect(app.title).toEqual('Synchronized Clocks');
   });
 });

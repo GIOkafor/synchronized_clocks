@@ -1,8 +1,8 @@
-<h1>Synchronized Clocks</h1>
+<h1 class="p-3">{{title}}</h1>
 <div class="cont">
-  <form class="mt-2 mb-3" [formGroup]="time_form" (ngSubmit)="setTime()">
-    <input type="datetime-local" name="new_time" formControlName="new_time">
-    <button class="btn primary_btn ml-3" type="submit" [disabled]="!time_form.valid">Change Time</button>
+  <form class="mt-2 mb-3 d-flex flex-column flex-md-row pl-3 pr-3" [formGroup]="time_form" (ngSubmit)="setTime()">
+    <input type="datetime-local" name="new_time" formControlName="new_time" class="mb-2">
+    <button class="btn primary_btn ml-md-3" type="submit" [disabled]="!time_form.valid">Change Time</button>
   </form>
 
   <div class="clocks">
